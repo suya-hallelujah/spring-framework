@@ -15,4 +15,5 @@ public class ConfigAny {
     Integer number(){
         return 100;
     }
+
 }

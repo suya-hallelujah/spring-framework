@@ -15,4 +15,9 @@ public class HomeController {
     public String welcome(){
         return "welcome.html";
     }
+
+    @RequestMapping // it goes to "/" when it's empty
+    public String home2(){ //method name does not matter at this point
+        return "welcome.html";
+    }
 }

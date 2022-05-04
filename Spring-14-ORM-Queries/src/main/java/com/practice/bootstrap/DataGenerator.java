@@ -1,6 +1,7 @@
 package com.practice.bootstrap;
 
 import com.practice.repository.DepartmentRepository;
+import com.practice.repository.EmployeeRepository;
 import com.practice.repository.RegionRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -10,10 +11,12 @@ public class DataGenerator implements CommandLineRunner {
 
     private final RegionRepository regionRepository;
     private final DepartmentRepository departmentRepository;
+    private final EmployeeRepository employeeRepository;
 
-    public DataGenerator(RegionRepository regionRepository, DepartmentRepository departmentRepository) {
+    public DataGenerator(RegionRepository regionRepository, DepartmentRepository departmentRepository, EmployeeRepository employeeRepository) {
         this.regionRepository = regionRepository;
         this.departmentRepository = departmentRepository;
+        this.employeeRepository = employeeRepository;
     }
 
 
@@ -37,6 +40,15 @@ public class DataGenerator implements CommandLineRunner {
         System.out.println("findDistinctTop3ByDivisionContaining:" + departmentRepository.findDistinctTop3ByDivisionContaining("Hea"));
 
         System.out.println("-----------------DEPARTMENT END-----------------");
+
+        System.out.println("-----------------EMPLOYEE START-----------------");
+
+        System.out.println("getEmployeeDetail:" + employeeRepository.getEmployeeDetail());
+        System.out.println("getEmployeeSalary:" + employeeRepository.getEmployeeSalary());
+
+
+
+        System.out.println("-----------------EMPLOYEE  END-----------------");
 
 
 

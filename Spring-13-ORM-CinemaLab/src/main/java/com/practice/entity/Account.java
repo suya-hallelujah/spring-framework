@@ -28,4 +28,19 @@ public class Account extends BaseEntity {
     @OneToOne(mappedBy = "account")
     private User user;
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", country='" + country + '\'' +
+                ", state='" + state + '\'' +
+                ", city='" + city + '\'' +
+                ", age=" + age +
+                ", postalCode='" + postalCode + '\'' +
+                ", role=" + role +
+                ", user=" + user +
+                '}';
+    }
+
 }
